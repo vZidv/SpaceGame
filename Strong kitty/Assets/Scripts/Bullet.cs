@@ -29,6 +29,9 @@ public class Bullet : MonoBehaviour
                     enemy.GetHit(Damage);
                     Destroy(gameObject);
                     break;
+                case "Player":
+                    Destroy(gameObject);
+                    break;
             }
         }
     }
