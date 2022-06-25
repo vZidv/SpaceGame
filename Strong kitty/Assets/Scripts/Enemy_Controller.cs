@@ -48,6 +48,8 @@ public class Enemy_Controller : MonoBehaviour
 
         if (health <= 0)
         {
+            Game_Cont cont = GameObject.FindGameObjectWithTag("Cont").GetComponent<Game_Cont>();
+            cont.GetItem(transform);
             Destroy(gameObject);
         }
         

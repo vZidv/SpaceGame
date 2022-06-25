@@ -92,10 +92,11 @@ public class Player_Ui : MonoBehaviour
             playerCont.gameObject.transform.Find("Effects").gameObject.transform.position = playerCont.gameObject.transform.Find("Level2Point").gameObject.transform.position;
             playerCont.healthStart += 5;
             playerCont.turboStart += 3;
-            playerCont.gameObject.GetComponent<Player_Weapon>().speedRotation = 3f;
+            playerCont.gameObject.GetComponent<Player_Weapon>().speedRotation = 2.5f;
             CapsuleCollider2D collider = playerCont.gameObject.GetComponent<CapsuleCollider2D>();
             collider.offset = new Vector3( 0,-0.94f);
             collider.size = new Vector2(2.2f, 3.12f);
+            playerCont.levelShip = 2;
             //0.17
 
             //1.17
@@ -104,7 +105,20 @@ public class Player_Ui : MonoBehaviour
         }
         else if(playerCont.Level >= playerCont.levelShip_3 && playerCont.levelShip == 2)
         {
+            playerCont.gameObject.transform.Find("ViewShip").Find("Ship_Lv3").gameObject.SetActive(true);
+            playerCont.gameObject.transform.Find("Effects").gameObject.transform.position = playerCont.gameObject.transform.Find("Level3Point").gameObject.transform.position;
+            playerCont.healthStart += 5;
+            playerCont.turboStart += 3;
+            playerCont.gameObject.GetComponent<Player_Weapon>().speedRotation = 2f;
+            CapsuleCollider2D collider = playerCont.gameObject.GetComponent<CapsuleCollider2D>();
+            collider.offset = new Vector3(0, -1.47f);
+            collider.size = new Vector2(3.41f, 3.47f);
+            playerCont.levelShip = 3;
+            //0.17
 
+            //1.17
+            //1.34
+            endUpGrade();
         }
     }
     private void endUpGrade()

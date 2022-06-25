@@ -27,14 +27,18 @@ public class Bullet : MonoBehaviour
                 case "Enemy":
                     Enemy_Controller enemy = hitInfo.collider.gameObject.GetComponent<Enemy_Controller>();
                     enemy.GetHit(Damage);
-                    Destroy(gameObject);
                     break;
                 case "Player":
                     Player_Contol player = hitInfo.collider.gameObject.GetComponent<Player_Contol>();
                     player.GetDamage(Damage);
-                    Destroy(gameObject);
+                    break;
+                case "Item":
+                    Item_control item = hitInfo.collider.gameObject.GetComponent<Item_control>();
+                    item.health -= Damage;
+                    
                     break;
             }
+            Destroy(gameObject);
         }
     }
 }
