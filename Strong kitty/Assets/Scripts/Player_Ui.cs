@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class Player_Ui : MonoBehaviour
 {
     private Slider healthBoard;
@@ -18,9 +18,14 @@ public class Player_Ui : MonoBehaviour
     public GameObject LazerShop;
     [Header("Screans")]
     public GameObject LevelUpScrean;
+    public GameObject pauseScraean;
+    public GameObject deadScrean;
+
     private Text level_text;
     GameObject player;
     Player_Contol playerCont;
+
+    bool pause = false;
     void Start()
     {   
         textXp = GameObject.Find("XpValue").GetComponent<Text>();
@@ -40,6 +45,19 @@ public class Player_Ui : MonoBehaviour
     
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape) && !pause)
+        {
+            pauseScraean.SetActive(true);
+            Time.timeScale = 0.001f;
+            pause = true;
+        }
+        else if(Input.GetKeyDown(KeyCode.Escape) && pause)
+        {
+            pauseScraean.SetActive(false);
+            Time.timeScale = 1;
+            pause = false;
+        }
+
         healthBoard.maxValue = playerCont.healthStart;
         turboBoard.maxValue = playerCont.turboStart;
 
@@ -52,6 +70,15 @@ public class Player_Ui : MonoBehaviour
      {       
         StartCoroutine(LevelUpCor());
      }
+    public void Exit()
+    {
+        Application.Quit();
+    }
+    public void Restart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("GameScene");
+    }
     IEnumerator LevelUpCor()
     {
         Animator ani = level_text.gameObject.GetComponent<Animator>();

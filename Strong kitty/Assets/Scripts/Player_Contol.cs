@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Contol : MonoBehaviour
 {
@@ -63,10 +64,11 @@ public class Player_Contol : MonoBehaviour
         transform.position += pos;
         if (health > healthStart)
             health = healthStart;
-        else if (health <= 0 && !isDead)
+        else if (health <= 0 )
         {
-            Destroy(gameObject);
-           // isDead = true;
+            Time.timeScale = 0;
+            playerUi.deadScrean.SetActive(true);
+            playerUi.deadScrean.transform.Find("Text_LevelEnd").GetComponent<Text>().text = "Your result level " + Level;
         }
 
     }
