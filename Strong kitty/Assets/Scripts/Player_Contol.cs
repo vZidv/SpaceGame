@@ -7,6 +7,10 @@ public class Player_Contol : MonoBehaviour
     public float health;
     public float turbo;   
     public int Level;
+    public int levelShip = 1;
+    [Header("For upgrade")]
+    public int levelShip_2;
+    public int levelShip_3;
     [Header("Xp")]
     public int startXp;
     public int Xp;

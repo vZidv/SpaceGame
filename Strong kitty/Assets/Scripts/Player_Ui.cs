@@ -53,9 +53,17 @@ public class Player_Ui : MonoBehaviour
         yield return new WaitForSeconds(1f);
         LevelUpScrean.SetActive(true);
 
+
+
         LevelUpScrean.gameObject.transform.Find("Board").Find("Health").Find("Health_Value").GetComponent<Text>().text = $"{playerCont.healthStart}";
         LevelUpScrean.gameObject.transform.Find("Board").Find("Turbo").Find("Turbo_Value").GetComponent<Text>().text = $"{playerCont.turboStart}";
         LevelUpScrean.gameObject.transform.Find("Board").Find("Damage").Find("Damage_Value").GetComponent<Text>().text = $"{playerCont.gameObject.GetComponent<Player_Weapon>().damageBonus}";
+        LevelUpScrean.gameObject.transform.Find("Board").Find("Level_Ship").Find("Level_Value").GetComponent<Text>().text = $"{playerCont.levelShip}";
+
+        if (playerCont.levelShip == 1)
+            LevelUpScrean.gameObject.transform.Find("Board").Find("Level_Ship").Find("Text_warning").GetComponent<Text>().text =  $"You need level {playerCont.levelShip_2} for this upgrade";
+        else if (playerCont.levelShip == 2)
+            LevelUpScrean.gameObject.transform.Find("Board").Find("Level_Ship").Find("Text_warning").GetComponent<Text>().text = $"You need level {playerCont.levelShip_3} for this upgrade";
 
         Time.timeScale = 0f;
         yield return new WaitForSeconds(1f);
@@ -75,6 +83,29 @@ public class Player_Ui : MonoBehaviour
     {
         playerCont.gameObject.GetComponent<Player_Weapon>().damageBonus += 1;
         endUpGrade();
+    }
+    public void UpgradeShip()
+    {
+        if(playerCont.Level >= playerCont.levelShip_2 && playerCont.levelShip == 1)
+        {
+            playerCont.gameObject.transform.Find("ViewShip").Find("Ship_Lv2").gameObject.SetActive(true);
+            playerCont.gameObject.transform.Find("Effects").gameObject.transform.position = playerCont.gameObject.transform.Find("Level2Point").gameObject.transform.position;
+            playerCont.healthStart += 5;
+            playerCont.turboStart += 3;
+            playerCont.gameObject.GetComponent<Player_Weapon>().speedRotation = 3f;
+            CapsuleCollider2D collider = playerCont.gameObject.GetComponent<CapsuleCollider2D>();
+            collider.offset = new Vector3( 0,-0.94f);
+            collider.size = new Vector2(2.2f, 3.12f);
+            //0.17
+
+            //1.17
+            //1.34
+            endUpGrade();
+        }
+        else if(playerCont.Level >= playerCont.levelShip_3 && playerCont.levelShip == 2)
+        {
+
+        }
     }
     private void endUpGrade()
     {
