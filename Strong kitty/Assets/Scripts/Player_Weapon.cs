@@ -8,13 +8,15 @@ public class Player_Weapon : MonoBehaviour
     public float speedRotation;
     public GameObject[] inventory;
     [SerializeField] GameObject[] allWeapon;
+    [Header("")]
+    public int damageBonus;
 
     void Start()
     {
         weaponNow = allWeapon[0];
         inventory[0] = allWeapon[0];
         weaponNow.SetActive(true);
-
+       
     }
 
     void FixedUpdate()
@@ -28,7 +30,7 @@ public class Player_Weapon : MonoBehaviour
         gameObject.transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, rotate - 90), speedRotation * Time.deltaTime) ;
         #endregion
         if (Input.GetKey(KeyCode.Mouse0))
-            weaponNow.GetComponent<Weapon_Controller>().Shoot();
+            weaponNow.GetComponent<Weapon_Controller>().Shoot(damageBonus);
         if (Input.GetKey(KeyCode.Alpha1))
             if (inventory[0])
             {

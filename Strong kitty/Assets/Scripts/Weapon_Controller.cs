@@ -25,7 +25,7 @@ public class Weapon_Controller : MonoBehaviour
         if(timeForFire >0)
          timeForFire -= Time.deltaTime;
     }
-    public void Shoot()
+    public void Shoot(int damageBonus)
     {
         if (timeForFire <= 0)
         {
@@ -35,7 +35,7 @@ public class Weapon_Controller : MonoBehaviour
                 if (scatter == 0)
                 {
                     GameObject bullet = Instantiate(bulletPrefab, ShootPoints[i].transform.position, ShootPoints[i].transform.rotation);
-                    bullet.GetComponent<Bullet>().Damage = damage;
+                    bullet.GetComponent<Bullet>().Damage = damage + damageBonus;
                 }
                 else
                 {
@@ -43,7 +43,7 @@ public class Weapon_Controller : MonoBehaviour
                     Quaternion angle = player.rotation;
                     angle.z += scatterNow;
                     GameObject bullet = Instantiate(bulletPrefab, ShootPoints[i].transform.position, angle);
-                    bullet.GetComponent<Bullet>().Damage = damage;
+                    bullet.GetComponent<Bullet>().Damage = damage + damageBonus;
                 }
             }       
         }
@@ -51,5 +51,6 @@ public class Weapon_Controller : MonoBehaviour
             return;
         
     }
+    public void Shoot() => Shoot(0);
    
 }

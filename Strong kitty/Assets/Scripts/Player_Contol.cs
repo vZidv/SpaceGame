@@ -5,15 +5,15 @@ using UnityEngine;
 public class Player_Contol : MonoBehaviour
 {
     public float health;
-    public float turbo;
+    public float turbo;   
     public int Level;
     [Header("Xp")]
     public int startXp;
     public int Xp;
     public int stepXp;
-    [Header("")]
-    private float healthStart;
-    private float turboStart;
+    [Header("Dont tauch")]
+    public float healthStart;
+    public float turboStart;
     [Header("")]
     public float speed;
     public float SpeedBoost;
@@ -24,6 +24,7 @@ public class Player_Contol : MonoBehaviour
     Player_Ui playerUi;
     void Start()
     {
+        turboStart = turbo;
         healthStart = health;
         startSpeed = speed;
         playerUi = GameObject.Find("Canvas_Ui").GetComponent<Player_Ui>();
@@ -40,7 +41,7 @@ public class Player_Contol : MonoBehaviour
         else
         {
             speed = startSpeed;
-            if(turbo < 10)
+            if(turbo < turboStart)
             turbo += Time.deltaTime/2;
         }
         if(Xp >= startXp)
