@@ -5,7 +5,11 @@ using UnityEngine;
 public class Player_Contol : MonoBehaviour
 {
     public float health;
+    public float turbo;
+    public int Level;
+
     private float healthStart;
+    private float turboStart;
     [Header("")]
     public float speed;
     public float SpeedBoost;
@@ -21,10 +25,17 @@ public class Player_Contol : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && turbo > 0)
+        {
             speed = SpeedBoost;
+            turbo -= Time.deltaTime;
+        }
         else
+        {
             speed = startSpeed;
+            if(turbo < 10)
+            turbo += Time.deltaTime/2;
+        }
 
         hor = (Input.GetAxis("Horizontal") * speed * Time.deltaTime);
         ver = (Input.GetAxis("Vertical") * speed * Time.deltaTime);
@@ -35,9 +46,10 @@ public class Player_Contol : MonoBehaviour
             health = healthStart;
         else if (health <= 0 && !isDead)
         {
-            // GameObject.Find("Player_Ui").GetComponent<Ui_Manager>().DeadScrean();
-            isDead = true;
+            Destroy(gameObject);
+           // isDead = true;
         }
 
     }
+    public void GetDamage(float damage) => health -= damage;
 }

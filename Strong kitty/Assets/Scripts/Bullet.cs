@@ -30,6 +30,8 @@ public class Bullet : MonoBehaviour
                     Destroy(gameObject);
                     break;
                 case "Player":
+                    Player_Contol player = hitInfo.collider.gameObject.GetComponent<Player_Contol>();
+                    player.GetDamage(Damage);
                     Destroy(gameObject);
                     break;
             }
