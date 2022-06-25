@@ -7,7 +7,11 @@ public class Player_Contol : MonoBehaviour
     public float health;
     public float turbo;
     public int Level;
-
+    [Header("Xp")]
+    public int startXp;
+    public int Xp;
+    public int stepXp;
+    [Header("")]
     private float healthStart;
     private float turboStart;
     [Header("")]
@@ -16,10 +20,13 @@ public class Player_Contol : MonoBehaviour
     private float startSpeed;
     float hor, ver;
     bool isDead = false;
+
+    Player_Ui playerUi;
     void Start()
     {
         healthStart = health;
         startSpeed = speed;
+        playerUi = GameObject.Find("Canvas_Ui").GetComponent<Player_Ui>();
     }
 
 
@@ -35,6 +42,13 @@ public class Player_Contol : MonoBehaviour
             speed = startSpeed;
             if(turbo < 10)
             turbo += Time.deltaTime/2;
+        }
+        if(Xp >= startXp)
+        {
+            Xp -= startXp;
+            startXp += stepXp;
+            Level += 1;
+            playerUi.LevelUp();
         }
 
         hor = (Input.GetAxis("Horizontal") * speed * Time.deltaTime);
