@@ -7,7 +7,7 @@ public class Player_Weapon : MonoBehaviour
     [SerializeField] GameObject weaponNow;
     public float speedRotation;
     public GameObject[] inventory;
-    [SerializeField] GameObject[] allWeapon;
+    public GameObject[] allWeapon;
     [Header("")]
     public int damageBonus;
 

@@ -10,6 +10,12 @@ public class Player_Ui : MonoBehaviour
     private GameObject level;
     private Text textXp;
 
+    [Header("Weapons")]
+    public GameObject shotGun;
+    public GameObject Lazer;
+
+    public GameObject shotGunShop;
+    public GameObject LazerShop;
     [Header("Screans")]
     public GameObject LevelUpScrean;
     private Text level_text;
@@ -79,10 +85,33 @@ public class Player_Ui : MonoBehaviour
         playerCont.turboStart += 2;
         endUpGrade();
     }
+    public void ShotGunUnlock()
+    {
+        if (playerCont.levelShip >= 2)
+        {
+            Player_Weapon player_Weapon = playerCont.gameObject.GetComponent<Player_Weapon>();
+            player_Weapon.inventory[1] = player_Weapon.allWeapon[1];
+            shotGun.SetActive(true);
+            shotGunShop.SetActive(false);
+            endUpGrade();
+        }
+    }
+    public void LazerUnlock()
+    {
+        if (playerCont.levelShip >= 3)
+        {
+            Player_Weapon player_Weapon = playerCont.gameObject.GetComponent<Player_Weapon>();
+            player_Weapon.inventory[2] = player_Weapon.allWeapon[2];
+            Lazer.SetActive(true);
+            LazerShop.SetActive(false);
+            endUpGrade();
+        }
+    }
     public void DamageUp()
     {
-        playerCont.gameObject.GetComponent<Player_Weapon>().damageBonus += 1;
-        endUpGrade();
+            playerCont.gameObject.GetComponent<Player_Weapon>().damageBonus += 1;
+            endUpGrade();
+           
     }
     public void UpgradeShip()
     {

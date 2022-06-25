@@ -12,11 +12,12 @@ public class BackGround : MonoBehaviour
     Game_Cont cont;
     private void Start()
     {
+        cont = GameObject.FindGameObjectWithTag("Cont").GetComponent<Game_Cont>();
         float rand = Random.Range(0, 100);
         
         if (rand <= 40f)
         {
-             cont = GameObject.FindGameObjectWithTag("Cont").GetComponent<Game_Cont>();
+             
             GameObject planet = Instantiate(cont.planet, pointC.transform.position, pointC.transform.rotation);
             planet.GetComponent<SpriteRenderer>().sprite = cont.ChangePlanet();
         }
@@ -30,11 +31,15 @@ public class BackGround : MonoBehaviour
             {
                 if (points[i] != null)
                 {
+                    
+                    GameObject backGround = Instantiate(prefab, points[i].transform.position, points[i].transform.rotation);
+                    BackGround bg = backGround.GetComponent<BackGround>();
+
                     int rand = Random.Range(0, 110);
                     int rand2 = 1;
-                    if(rand >0 && rand <=50)
+                    if (rand > 0 && rand <= 50)
                     {
-                        spaw(rand2, 0,points[i]);
+                        spaw(rand2, 0, points[i]);
                     }
                     else if (rand > 50 && rand <= 65)
                     {
@@ -45,8 +50,7 @@ public class BackGround : MonoBehaviour
                         spaw(rand2, 2, points[i]);
                     }
 
-                    GameObject backGround = Instantiate(prefab, points[i].transform.position, points[i].transform.rotation);
-                    BackGround bg = backGround.GetComponent<BackGround>();
+
                     bg.isActiv = false;
                 }
             }
