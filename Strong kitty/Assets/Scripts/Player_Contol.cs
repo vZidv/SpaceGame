@@ -70,5 +70,6 @@ public class Player_Contol : MonoBehaviour
         }
 
     }
+
     public void GetDamage(float damage) => health -= damage;
 }

@@ -451,11 +451,17 @@ MonoBehaviour:
   - {fileID: 5173771081806953928, guid: 445eaa425def0eb4a8565a5658e8d828, type: 3}
   - {fileID: 5629571592161667195, guid: 07085f844e6bce246a288d92ad0d8a35, type: 3}
   - {fileID: 8771121707652283982, guid: c20a1f99f2912bc439e3df74b0cb683e, type: 3}
+  - {fileID: 6314885894858314615, guid: 105b26b02db47e4439e6f06f8170530f, type: 3}
   planet: {fileID: 5843245875975753342, guid: 8a37968f1fbfd23489936e9f74ce95b5, type: 3}
   planetsM:
   - {fileID: 6578029921566799198, guid: d9a05e5fc4f65d34ab648aef40f5b534, type: 3}
   - {fileID: -4762131440615872945, guid: d9a05e5fc4f65d34ab648aef40f5b534, type: 3}
   - {fileID: 1337643087485978474, guid: d9a05e5fc4f65d34ab648aef40f5b534, type: 3}
+  enemies:
+  - {fileID: 6828395056787992607, guid: 364b905019ded6048a77c0a2b48d6169, type: 3}
+  - {fileID: 2201599191285009730, guid: dd516fc9f5e9ca440b900f67248cfdfc, type: 3}
+  - {fileID: 1253512953450710039, guid: 45eb263af2f9258498d1ffaa3dafb497, type: 3}
+  timeSpawnEnemies: 5
 --- !u!4 &209749742
 Transform:
   m_ObjectHideFlags: 0
@@ -9041,7 +9047,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714186003}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24.81, y: 1.19, z: 0}
+  m_LocalPosition: {x: -18.2, y: -12.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1190724527}
