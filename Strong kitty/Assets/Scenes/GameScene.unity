@@ -10251,7 +10251,7 @@ MonoBehaviour:
   health: 20
   turbo: 1
   Level: 1
-  levelShip: 3
+  levelShip: 1
   levelShip_2: 20
   levelShip_3: 40
   startXp: 10
