@@ -10,6 +10,7 @@ public class Weapon_Controller : MonoBehaviour
     public float timeForFireStart;
     public float scatter = 0;
     public GameObject bulletPrefab;
+    public int bulletsNumbers;
     //Dont touch
     float timeForFire = 0;
 
@@ -34,16 +35,26 @@ public class Weapon_Controller : MonoBehaviour
             {
                 if (scatter == 0)
                 {
-                    GameObject bullet = Instantiate(bulletPrefab, ShootPoints[i].transform.position, ShootPoints[i].transform.rotation);
-                    bullet.GetComponent<Bullet>().Damage = damage + damageBonus;
+                    for (int j = 0; j < bulletsNumbers; )
+                    {
+                        GameObject bullet = Instantiate(bulletPrefab, ShootPoints[i].transform.position, ShootPoints[i].transform.rotation);
+                        bullet.GetComponent<Bullet>().Damage = damage + damageBonus;
+                        j++;
+                    }
+                    
                 }
                 else
                 {
-                    float scatterNow = Random.Range(-scatter, scatter);
-                    Quaternion angle = player.rotation;
-                    angle.z += scatterNow;
-                    GameObject bullet = Instantiate(bulletPrefab, ShootPoints[i].transform.position, angle);
-                    bullet.GetComponent<Bullet>().Damage = damage + damageBonus;
+                    for (int j = 0; j < bulletsNumbers;)
+                    {
+
+                        float scatterNow = Random.Range(-scatter, scatter);
+                        Quaternion angle = player.rotation;
+                        angle.z += scatterNow;
+                        GameObject bullet = Instantiate(bulletPrefab, ShootPoints[i].transform.position, angle);
+                        bullet.GetComponent<Bullet>().Damage = damage + damageBonus;
+                        j++;
+                    }
                 }
             }       
         }

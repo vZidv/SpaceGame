@@ -5141,7 +5141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f86fd273ed021c418911361d1426cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 1.5
   ShootPoints:
   - {fileID: 6828395057222580309}
   - {fileID: 6828395056505222813}
@@ -5149,6 +5149,7 @@ MonoBehaviour:
   scatter: 0
   bulletPrefab: {fileID: 8659782065782120427, guid: 820574237fbc2a74db0c88582ece5e07,
     type: 3}
+  bulletsNumbers: 1
 --- !u!1 &6828395056787992607
 GameObject:
   m_ObjectHideFlags: 0
@@ -5246,12 +5247,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0b5dac2bbfe694aa7fa86b73d0ec84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 15
   speed: 4
   speedRotation: 5
   distanceStay: 4.5
   Weapon: {fileID: 6828395056617027285}
-  rangeAttack: 10
+  rangeAttack: 20
 --- !u!60 &6828395056787992603
 PolygonCollider2D:
   m_ObjectHideFlags: 0

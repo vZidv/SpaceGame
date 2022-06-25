@@ -5,6 +5,8 @@ using UnityEngine;
 public class Game_Cont : MonoBehaviour
 {
   public GameObject[] cristals;
+    public GameObject planet;
+    public Sprite[] planetsM;
 
     public void GetItem(Transform transformP)
     {
@@ -17,5 +19,10 @@ public class Game_Cont : MonoBehaviour
         else if (rand > 60 && rand <= 70)
             numberItem = 2;
         Instantiate(cristals[numberItem], transformP.position, transformP.rotation);
+    }
+    public Sprite ChangePlanet()
+    {
+        int rand = Random.Range(0, planetsM.Length -1 );
+        return planetsM[rand];
     }
 }
