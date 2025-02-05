@@ -1,5 +1,5 @@
 <div align="center" style="
-    background-image: url('assets/images/BackGround_Space.png');
+    background-image: url('https://raw.githubusercontent.com/vZidv/SpaceGame/main/assets/images/BackGround_Space.png');
     background-size: cover;
     background-position: center;
     padding: 140px 20px;
@@ -7,18 +7,7 @@
     border-radius: 15px;
 ">
 
-<div align="center" style="
-    background-image: url('assets/images/MainScrean3.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 140px 20px;
-    color: white;
-    border-radius: 15px;
-">
-</div>
-
-
-### **About game**
+### **About the Game**
 **Space Ripper** is a top-down shooter developed during a **48-hour** game jam with the theme `"Space Game"`. This was my first participation in a game jam, and it took place in **2022**.
 
 **Become the most wanted outlaw in the galaxy!**  
@@ -31,19 +20,20 @@ Survive, upgrade, and dominate in this adrenaline-packed space adventure!
 You are **The Ripper** — a legendary space bandit hunted across the galaxy! In a universe where technology thrives on **energy crystals**, your mission is to outsmart your pursuers, harness the power of crystals, and turn even the weakest ship into an unstoppable force. Upgrade, adapt, and leave destruction in your wake!
 
 ---
+
 <p align="center">
-    <img src="assets/images/ScreanShot2.jpg" alt="ScreanShot2">
-    <img src="assets/images/ScreanShot1.jpg" alt="ScreanShot1">
-    <img src="assets/images/ScreanShot3.jpg" alt="ScreanShot3">
+    <img src="assets/images/Screenshot1.jpg" alt="Gameplay 1" width="30%">
+    <img src="assets/images/Screenshot2.jpg" alt="Gameplay 2" width="30%">
+    <img src="assets/images/Screenshot3.jpg" alt="Gameplay 3" width="30%">
 </p>
 
 ## 🎮 Game Description
 
 **Space Ripper** is a fast-paced space shooter where you:  
-✔ **Travel** through treacherous star systems.  
-✔ **Blow up planets** to loot energy crystals.  
-✔ **Battle** relentless enemies — from bounty hunters to galactic drones.  
-✔ **Upgrade** your ship with powerful weapons, shields, and engines.  
+✔ **Travel** through treacherous star systems  
+✔ **Blow up planets** to loot energy crystals  
+✔ **Battle** relentless enemies — from bounty hunters to galactic drones  
+✔ **Upgrade** your ship with powerful weapons, shields, and engines  
 ✔ **Rise** to the top of the galactic most-wanted list!
 
 ---
@@ -60,22 +50,29 @@ You are **The Ripper** — a legendary space bandit hunted across the galaxy! In
 
 ## 💥 Features
 
- **Dynamic Ship Customization**: Use energy crystals to upgrade weapons, shields, and engines.  
- **Epic Space Battles**: Fight swarms of enemies with 3 unique weapon types.  
- **Destructible Planets**: Destroy planets to collect resources (and watch them explode!).  
- **Progression System**: Unlock new abilities and climb the leaderboards.  
+**Dynamic Ship Customization**  
+Use energy crystals to upgrade weapons, shields, and engines  
+
+**Epic Space Battles**  
+Fight swarms of enemies with 3 unique weapon types  
+
+**Destructible Planets**  
+Destroy planets to collect resources (and watch them explode!)  
+
+**Progression System**  
+Unlock new abilities and climb the leaderboards  
 
 ---
 
 ## 🛠 Installation
 
-### First way
-Download the game from [itch.io](https://vdizv.itch.io/space-ripper).
+### First Way
+1. Download the game from [itch.io](https://vdizv.itch.io/space-ripper)
 
-### Second way
-Get the latest version from [Releases](https://github.com/vZidv/SpaceGame/releases).
-Extract the ZIP file.
-Launch `Space Ripper.exe`.
+### Second Way
+1. Get the latest version from [Releases](https://github.com/vZidv/SpaceGame/releases)
+2. Extract the ZIP file
+3. Launch `Space Ripper.exe`
 
 ---
 
@@ -83,5 +80,4 @@ Launch `Space Ripper.exe`.
 
 This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
 
----
 </div>
